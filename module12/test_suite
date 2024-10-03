@@ -1,0 +1,11 @@
+import unittest
+import python_test
+
+calcTest = unittest.TestSuite()
+
+# calcTest.addTest((unittest.makeSuite(python_test.CalcTest)))
+calcTest.addTest((unittest.TestLoader().loadTestsFromTestCase(python_test.CalcTest)))
+calcTest.addTest((unittest.TestLoader().loadTestsFromTestCase(python_test.NewCalcTest)))
+
+runner = unittest.TextTestRunner(verbosity=2)
+runner.run(calcTest)
